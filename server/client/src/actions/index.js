@@ -10,8 +10,10 @@ export const fetchUser = () => async (dispatch) => {
 
 export const fetchCards = () => async (dispatch) => {
   const res = await axios.get("/api/cards");
-  cardId = cardId + res.data[res.data.length - 1].cardId;
-  dispatch({ type: "FETCH_CARDS", payload: res.data });
+  if (res.data.length > 0) {
+    cardId = cardId + res.data[res.data.length - 1].cardId;
+    dispatch({ type: "FETCH_CARDS", payload: res.data });
+  }
 };
 
 export const fetchLabels = () => async (dispatch) => {
@@ -44,6 +46,7 @@ export const deleteCard = (id) => async (dispatch) => {
 };
 
 export const updateHeader = (index, newHeader, id) => async (dispatch) => {
+  console.log(id, newHeader);
   await axios.post("/api/cardHeader", { id, newHeader });
   dispatch({
     type: "UPDATE_HEADER",

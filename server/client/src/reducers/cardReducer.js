@@ -51,6 +51,6 @@ export default function (
       newState[cardLabelIndex].label = action.payload.label;
       return newState;
     default:
-      return newState;
+      return state;
   }
 }

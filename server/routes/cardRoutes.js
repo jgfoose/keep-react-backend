@@ -16,10 +16,10 @@ module.exports = (app) => {
   });
 
   app.post("/api/cards", requireLogin, (req, res) => {
-    const { id, header, color, label, items } = req.body;
+    const { cardId, header, color, label, items } = req.body;
 
     const card = new Card({
-      cardId: id,
+      cardId: cardId,
       header: header,
       color: color,
       label: label,
