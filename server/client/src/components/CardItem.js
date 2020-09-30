@@ -69,7 +69,7 @@ class CardItem extends Component {
         <input
           type="text"
           className=""
-          placeholder="Add a List Item"
+          placeholder="+ Add a List Item"
           ref={this.newListItem}
           onKeyUp={handleNewItem}
         ></input>

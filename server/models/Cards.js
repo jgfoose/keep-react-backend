@@ -7,7 +7,7 @@ const cardSchema = new Schema({
   color: String,
   label: String,
   items: [String],
-  _user: { type: Schema.Types.ObjectId, ref: "User" },
+  _user: String,
   dateCreated: Date,
   lastUpdated: Date,
 });

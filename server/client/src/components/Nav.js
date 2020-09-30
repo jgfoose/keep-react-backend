@@ -12,7 +12,14 @@ class NavHeader extends Component {
       case false:
         return <Nav.Link href="/auth/google">Login</Nav.Link>;
       default:
-        return <Nav.Link href="/api/logout">Logout</Nav.Link>;
+        return (
+          <>
+            <Navbar.Collapse id="responsive-navbar-nav">
+              <Sidenav />
+            </Navbar.Collapse>
+            <Nav.Link href="/api/logout">Logout</Nav.Link>
+          </>
+        );
     }
   }
 
@@ -23,9 +30,7 @@ class NavHeader extends Component {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           React Keep
         </Navbar.Brand>
-        <Navbar.Collapse id="responsive-navbar-nav">
-          <Sidenav />
-        </Navbar.Collapse>
+
         {this.renderHelper()}
       </Navbar>
     );

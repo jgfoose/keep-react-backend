@@ -23,7 +23,7 @@ export default function (
     case "CREATE_CARD":
       return [...state, action.payload];
     case "DELETE_CARD":
-      newState = state.filter((card) => card.cardId != action.payload);
+      newState = state.filter((card) => card.cardId !== action.payload);
       return newState;
     case "UPDATE_HEADER":
       newState[action.payload.index].header = action.payload.header;

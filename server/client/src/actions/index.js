@@ -1,5 +1,5 @@
 import axios from "axios";
-import { FETCH_USER, FETCH_CARDS } from "./types";
+import { FETCH_USER } from "./types";
 
 let cardId = 1;
 
@@ -18,7 +18,6 @@ export const fetchCards = () => async (dispatch) => {
 
 export const fetchLabels = () => async (dispatch) => {
   const res = await axios.get("/api/labels");
-  console.log(res.data);
   dispatch({ type: "FETCH_LABELS", payload: res.data });
 };
 

@@ -3,7 +3,7 @@ const { Schema } = mongoose;
 
 const labelSchema = new Schema({
   label: String,
-  _user: { type: Schema.Types.ObjectId, ref: "User" },
+  _user: String,
 });
 
 mongoose.model("labels", labelSchema);
